@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Dashboard</title>
+    <script src="../js/scripts.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For icons -->
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar collapsed"> <!-- Add 'collapsed' class by default -->
+    <div class="sidebar-header">
+        <img src="../images/sizwe_training_logo.jpeg" alt="Sizwe Training Logo" class="sidebar-logo" id="toggle-sidebar">
+    </div>
+    <nav class="sidebar-nav">
+        <ul>
+            <li><a href="dashboard.html" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+            <li><a href="clientmanagement.html"><i class="fas fa-users"></i> <span>Clients</span></a></li>
+            <li><a href="accreditation.html"><i class="fas fa-certificate"></i> <span>Accreditation</span></a></li>
+            <li><a href="wsp-training.html"><i class="fas fa-chalkboard-teacher"></i> <span>WSP & Training</span></a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Main content area -->
+<div class="main-content">
+    <header class="header">
+        <h1>Dashboard</h1>
+    </header>
+    <main>
+        <!-- Key Metrics Section -->
+        <section class="key-metrics">
+            <div class="card">
+                <h3>Total Customers</h3>
+                <p>1,245</p>
+            </div>
+            <div class="card">
+                <h3>Active Leads</h3>
+                <p>342</p>
+            </div>
+            <div class="card">
+                <h3>Closed Deals</h3>
+                <p>128</p>
+            </div>
+            <div class="card">
+                <h3>Pending Tasks</h3>
+                <p>15</p>
+            </div>
+        </section>
+
+        <!-- Sales Pipeline Section -->
+        <section class="sales-pipeline">
+            <h2>Sales Pipeline</h2>
+            <div class="pipeline">
+                <div class="stage completed">Leads</div>
+                <div class="stage completed">Opportunities</div>
+                <div class="stage">Deals</div>
+            </div>
+        </section>
+
+        <!-- Recent Activities Section -->
+        <section class="recent-activities">
+            <h2>Recent Activities</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Activity</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>April 5, 2025</td>
+                        <td>Followed up with John Doe (Lead)</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>April 4, 2025</td>
+                        <td>Closed a deal with ABC Corp.</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>April 3, 2025</td>
+                        <td>Added a new customer: Jane Smith</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>April 2, 2025</td>
+                        <td>Scheduled a meeting with XYZ Ltd.</td>
+                        <td>Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Combined Calendar and Quick Actions Section -->
+        <section class="calendar-and-actions">
+            <h2>Upcoming Events & Quick Actions</h2>
+            <div class="calendar">
+                <h3>Upcoming Events</h3>
+                <p>Meeting with ABC Corp. - April 10, 2025</p>
+                <p>Task Deadline: Follow-up with Leads - April 12, 2025</p>
+            </div>
+            <div class="button-group">
+                <button onclick="window.location.href='clientmanagement.html'">Add Customer</button>
+                <button>Create Task</button>
+                <button>Generate Report</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 CRM. All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>

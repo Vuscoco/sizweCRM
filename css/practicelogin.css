@@ -1,0 +1,125 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #006400, #228B22); /* Bottle green gradient */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#auth-section {
+    background: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+#auth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#auth-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#auth-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#auth-form input:focus {
+    border-color: #006400; /* Bottle green */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 100, 0, 0.5);
+}
+
+#forgot-password {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #006400; /* Bottle green */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+#forgot-password:hover {
+    color: #228B22; /* Lighter green */
+}
+
+#auth-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#auth-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#login-button {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+}
+
+#login-button:hover {
+    background-color: #228B22; /* Lighter green */
+    transform: scale(1.05);
+}
+
+#signup-button {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+}
+
+#signup-button:hover {
+    background-color: #228B22; /* Lighter green */
+    transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+    #auth-section {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}

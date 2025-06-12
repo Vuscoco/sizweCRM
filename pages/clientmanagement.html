@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management</title>
+    <script src="../js/scripts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/customer.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    
+<!-- Sidebar -->
+<div class="sidebar collapsed"> <!-- Add 'collapsed' class by default -->
+    <div class="sidebar-header">
+        <img src="../images/sizwe_training_logo.jpeg" alt="Sizwe Training Logo" class="sidebar-logo" id="toggle-sidebar">
+    </div>
+    <nav class="sidebar-nav">
+        <ul>
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+            <li><a href="clientmanagement.html" class="active"><i class="fas fa-users"></i> <span>Clients</span></a></li>
+            <li><a href="accreditation.html"><i class="fas fa-certificate"></i> <span>Accreditation</span></a></li>
+            <li><a href="wsp-training.html"><i class="fas fa-chalkboard-teacher"></i> <span>WSP & Training</span></a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<!-- Main content area -->
+        <div class="main-content">
+        <header class="header">
+        <h1>Clients</h1>
+        </header>
+
+        <div class="button-container">
+            <div class="dropdown">
+                <button class="new-client-btn">
+                    <i class="fas fa-plus"></i> New
+                </button>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="clientconcept.html"><i class="fas fa-users"></i> Client <i class="fas fa-chevron-right"></i></a>
+                        <div class="nested-dropdown-content">
+                            <a href="clientconcept-sol.html">Sol Danka</a>
+                            <a href="clientconcept-seta.html">Seta</a>
+                        </div>
+                    </div>
+                    <a href="contractconcept.html"><i class="fas fa-file-contract"></i> Contract</a>
+                    <a href="skillsconcept.html"><i class="fas fa-graduation-cap"></i> Skills Program</a>
+                    <a href="awardconcept.html"><i class="fas fa-award"></i> Award Letter</a>
+                </div>
+            </div>
+        </div>
+
+        <main>
+        <!-- Accreditation Overview Section -->
+        <section class="accreditation-overview">
+            <div class="section-header">
+                <h2>Summary</h2>
+            </div>
+            <p>View and manage all your information here.</p>
+            <div class="cards">
+                <div class="card" style="grid-column: 1 / span 2;">
+                    <h2>SETA contracts cost</h2>
+                    <p>R 45,000</p>
+                </div>
+
+                <div class="card" style="grid-column: 3 / span 2;">
+                    <h2>SLA</h2>
+                    <p>R 12,000</p>
+                </div>
+
+                <div class="card" style="grid-column: 5 / span 2;">
+                    <h2>Clients</h2>
+                    <p>15</p>
+                </div>
+
+                <div class="card" style="grid-column: 2 / span 2;">
+                    <h2>Learners (active)</h2>
+                    <p>120</p>
+                </div>
+
+                <div class="card" style="grid-column: 4 / span 2;">
+                    <h2>Learners (terminated)</h2>
+                    <p>45</p>
+                </div>
+            </div>
+        </section>
+
+        </main>
+    <footer>
+        <p>&copy; 2025 CRM. All rights reserved.</p>
+    </footer>
+</div>
+
+<!-- Theme Management Script -->
+<script>
+    // Theme management
+    function changeTheme(theme) {
+        const cards = document.querySelectorAll('.card');
+        const themeOptions = document.querySelectorAll('.filter-option');
+        const themeValues = document.querySelectorAll('.theme-value');
+        
+        // Remove all theme classes
+        cards.forEach(card => {
+            card.classList.remove('default-theme', 'inverted-theme', 'gradient-theme', 'dark-theme');
+        });
+        
+        // Add selected theme class
+        cards.forEach(card => {
+            card.classList.add(`${theme}-theme`);
+        });
+        
+        // Update values based on theme
+        themeValues.forEach(value => {
+            value.textContent = value.dataset[theme] || value.dataset.default;
+            value.style.color = 'white'; // Ensure text stays white
+        });
+        
+        // Update active state
+        themeOptions.forEach(option => {
+            if (option.dataset.theme === theme) {
+                option.classList.add('active');
+            } else {
+                option.classList.remove('active');
+            }
+        });
+
+        // Save theme preference
+        localStorage.setItem('savedTheme', theme);
+    }
+
+    // Initialize theme system
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('themeToggle');
+        const themeDropdown = document.getElementById('themeDropdown');
+        const themeOptions = document.querySelectorAll('#themeDropdown .filter-option');
+        
+        // Theme switching
+        themeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const theme = option.dataset.theme;
+                changeTheme(theme);
+                themeDropdown.classList.remove('show');
+                themeToggle.classList.remove('active');
+            });
+        });
+
+        // Toggle theme dropdown
+        themeToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            themeDropdown.classList.toggle('show');
+            themeToggle.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!themeDropdown.contains(e.target) && !themeToggle.contains(e.target)) {
+                themeDropdown.classList.remove('show');
+                themeToggle.classList.remove('active');
+            }
+        });
+
+        // Prevent dropdown from closing when clicking inside it
+        themeDropdown.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('savedTheme') || 'default';
+        changeTheme(savedTheme);
+    });
+</script>
+
+</body>
+</html>

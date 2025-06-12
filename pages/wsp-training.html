@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSP & Training</title>
+    <script src="../js/scripts.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/wsp-training.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+<!-- Sidebar -->
+<div class="sidebar collapsed">
+    <div class="sidebar-header">
+        <img src="../images/sizwe_training_logo.jpeg" alt="Sizwe Training Logo" class="sidebar-logo" id="toggle-sidebar">
+    </div>
+    <nav class="sidebar-nav">
+        <ul>
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+            <li><a href="clientmanagement.html"><i class="fas fa-users"></i> <span>Clients</span></a></li>
+            <li><a href="accreditation.html"><i class="fas fa-certificate"></i> <span>Accreditation</span></a></li>
+            <li><a href="wsp-training.html" class="active"><i class="fas fa-chalkboard-teacher"></i> <span>WSP & Training</span></a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Main content area -->
+<div class="main-content">
+    <header class="header">
+        <h1>WSP & Training</h1>
+    </header>
+    <main>
+        <!-- WSP Overview Section -->
+        <section class="accreditation-overview">
+            <div class="section-header">
+                <h2>Summary</h2>
+            </div>
+            <p>View and manage all your WSP & Training information here.</p>
+            <div class="cards">
+                <div class="card" style="grid-column: 1 / span 2;">
+                    <h2>Active WSPs</h2>
+                    <p>25</p>
+                </div>
+
+                <div class="card" style="grid-column: 3 / span 2;">
+                    <h2>Training Programs</h2>
+                    <p>15</p>
+                </div>
+
+                <div class="card" style="grid-column: 5 / span 2;">
+                    <h2>Learners Enrolled</h2>
+                    <p>150</p>
+                </div>
+
+                <div class="card" style="grid-column: 2 / span 2;">
+                    <h2>SDL Claims</h2>
+                    <p>R 450,000</p>
+                </div>
+
+                <div class="card" style="grid-column: 4 / span 2;">
+                    <h2>B-BBEE Score</h2>
+                    <p>85%</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WSP Management Section -->
+        <section class="wsp-management">
+            <h2>WSP Management</h2>
+            <div class="wsp-grid">
+                <div class="wsp-card">
+                    <h3>Skills Gap Analysis</h3>
+                    <ul>
+                        <li>Current Skills Audit</li>
+                        <li>Future Requirements</li>
+                        <li>Training Needs</li>
+                    </ul>
+                    <button class="action-button">View Analysis</button>
+                </div>
+                <div class="wsp-card">
+                    <h3>Training Programs</h3>
+                    <ul>
+                        <li>Learnerships</li>
+                        <li>Internships</li>
+                        <li>Apprenticeships</li>
+                    </ul>
+                    <button class="action-button">Manage Programs</button>
+                </div>
+                <div class="wsp-card">
+                    <h3>Budget Allocation</h3>
+                    <ul>
+                        <li>SDL Contributions</li>
+                        <li>Grant Claims</li>
+                        <li>Training Budget</li>
+                    </ul>
+                    <button class="action-button">View Budget</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compliance Section -->
+        <section class="compliance-section">
+            <h2>Compliance & Reporting</h2>
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <h3>WSP Submission Status</h3>
+                    <div class="status-indicator">
+                        <span class="status-dot active"></span>
+                        <span>Current WSP: Submitted</span>
+                    </div>
+                    <div class="status-indicator">
+                        <span class="status-dot pending"></span>
+                        <span>ATR: Due in 30 days</span>
+                    </div>
+                </div>
+                <div class="compliance-card">
+                    <h3>B-BBEE Impact</h3>
+                    <div class="bbee-score">
+                        <div class="score-circle">
+                            <span>85%</span>
+                        </div>
+                        <p>Skills Development Score</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Training Calendar Section -->
+        <section class="training-calendar">
+            <h2>Training Schedule</h2>
+            <div class="calendar-grid">
+                <div class="upcoming-training">
+                    <h3>Upcoming Training</h3>
+                    <ul class="training-list">
+                        <li>
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="training-info">
+                                <h4>Leadership Development</h4>
+                                <p>Starts: May 15, 2024</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-tools"></i>
+                            <div class="training-info">
+                                <h4>Technical Skills Workshop</h4>
+                                <p>Starts: June 1, 2024</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <button class="action-button">New WSP</button>
+                    <button class="action-button">Schedule Training</button>
+                    <button class="action-button">Generate Report</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 CRM. All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html> 

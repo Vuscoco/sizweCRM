@@ -1,0 +1,739 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    background-color: #f4f4f4;
+    color: #333;
+    overflow: hidden; /* Prevent scrolling if content overflows */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    height: 100%; /* Full height */
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease; /* Smooth transition for collapsing */
+}
+
+.sidebar.collapsed {
+    width: 80px; /* Collapsed width */
+}
+
+.sidebar-header {
+    padding: 14.2px;
+    text-align: center;
+    border-bottom: 0.5px solid #ffffff; /* Darker green for separation */
+    cursor: pointer; /* Make the logo clickable */
+}
+
+.sidebar-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    margin: 10px 0;
+}
+
+.sidebar-nav a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    background-color: #228B22; /* Lighter green for hover */
+}
+
+.sidebar.collapsed .sidebar-nav a span {
+    display: none; /* Hide text when collapsed */
+}
+
+.sidebar.collapsed .sidebar-nav a {
+    justify-content: center; /* Center icons when collapsed */
+}
+
+
+/* Main Content */
+.main-content {
+    margin-left: 250px; /* Adjust for sidebar width */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    background-color: #f4f4f4; /* Ensure background color is visible */
+    color: #333;
+    transition: margin-left 0.3s ease; /* Smooth transition for collapsing */
+}
+
+.sidebar.collapsed ~ .main-content {
+    margin-left: 80px; /* Adjust for collapsed sidebar */
+}
+
+/* Header inside Main Content */
+.header {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Section */
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Highlight the active page in the sidebar */
+.sidebar-nav a.active {
+    background-color: #228B22; /* Lighter green for active state */
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Key Metrics Section */
+.key-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Card Styling ela ela eeh eeh */
+/* Cards Container */
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+/* Individual Card */
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Card Component under my umbrella*/
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    color: #006400; /* Bottle green */
+    margin-bottom: 10px;
+}
+
+/* Sales Pipeline Section */
+.sales-pipeline {
+    margin-bottom: 40px;
+}
+
+.pipeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.stage {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin: 0 5px;
+    color: #333;
+}
+
+.stage.completed {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+}
+
+/* Recent Activities Section */
+.recent-activities {
+    margin-bottom: 40px;
+}
+
+.recent-activities h2 {
+    margin-bottom: 10px;
+    color: #006400; /* Bottle green */
+}
+
+.recent-activities table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recent-activities th,
+.recent-activities td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.recent-activities th {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    font-weight: bold;
+}
+
+.recent-activities tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray for alternating rows */
+}
+
+.recent-activities tr:hover {
+    background-color: #f1f1f1; /* Slightly darker gray on hover */
+}
+
+.recent-activities td {
+    color: #333;
+}
+
+.recent-activities td:last-child {
+    font-weight: bold;
+    color: #006400; /* Highlight status */
+}
+
+/* Calendar and Quick Actions Section */
+.calendar-and-actions {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff; /* White background for the section */
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.calendar-and-actions h2 {
+    margin-bottom: 20px;
+    color: #006400; /* Bottle green */
+    text-align: center;
+}
+
+.calendar {
+    margin-bottom: 20px;
+}
+
+.calendar h3 {
+    margin-bottom: 10px;
+    color: #006400; /* Bottle green */
+}
+
+.calendar p {
+    margin: 5px 0;
+    color: #333; /* Darker text for readability */
+}
+
+/* Button Group Styling */
+.button-group {
+    display: flex; /* Align buttons horizontally */
+    border: 2px solid #006400; /* Outer border for the group */
+    border-radius: 8px; /* Rounded corners for the group */
+    overflow: hidden; /* Ensure buttons stay within the border */
+    margin-top: 10px;
+}
+
+.button-group button {
+    flex: 1; /* Make all buttons equal width */
+    border: none; /* Remove individual button borders */
+    background-color: #006400; /* Bottle green background */
+    color: #fff; /* White text */
+    padding: 8px 16px; /* Compact padding */
+    font-size: 18px; /* Larger font size */
+    font-weight: bold; /* Thicker font */
+    cursor: pointer;
+    position: relative; /* Required for the box-shadow effect */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Default shadow for 3D effect */
+}
+
+.button-group button:not(:last-child)::after {
+    content: ""; /* Add a pseudo-element for the hollow divider */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px; /* Width of the hollow divider */
+    height: 100%;
+    background-color: #fff; /* Match the section background color */
+    z-index: 1; /* Ensure it appears above the button */
+}
+
+.button-group button:hover {
+    background-color: #fff; /* Invert background color */
+    color: #006400; /* Invert text color */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+}
+
+.button-group button:active {
+    background-color: #004d00; /* Darker green when clicked */
+    color: #fff; /* Keep text white when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow to simulate pressing */
+    transform: translateY(2px); /* Slight downward movement on click */
+} 
+
+/* Accreditation Overview Section */
+.accreditation-overview {
+    margin-bottom: 40px;
+    background-color: #fff; /* White background for the section */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.accreditation-overview h2 {
+    margin-bottom: 20px;
+    color: #006400; /* Bottle green */
+    text-align: center;
+}
+
+.accreditation-overview p {
+    margin-bottom: 20px;
+    color: #333; /* Dark text for readability */
+    text-align: center;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat {
+    flex: 1;
+    text-align: center;
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.stat h3 {
+    color: #006400; /* Bottle green */
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Accreditation List Section */
+.accreditation-list {
+    margin-bottom: 40px;
+    background-color: #fff; /* White background for the section */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.accreditation-list h2 {
+    margin-bottom: 20px;
+    color: #006400; /* Bottle green */
+    text-align: center;
+}
+
+.accreditation-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.accreditation-list th,
+.accreditation-list td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.accreditation-list th {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    font-weight: bold;
+}
+
+.accreditation-list tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray for alternating rows */
+}
+
+.accreditation-list tr:hover {
+    background-color: #f1f1f1; /* Slightly darker gray on hover */
+}
+
+/* Add New Accreditation Section */
+.add-accreditation {
+    margin-bottom: 40px;
+    background-color: #fff; /* White background for the section */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.add-accreditation h2 {
+    margin-bottom: 20px;
+    color: #006400; /* Bottle green */
+    text-align: center;
+}
+
+.add-accreditation form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.add-accreditation form label {
+    grid-column: span 2;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.add-accreditation form input,
+.add-accreditation form button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-accreditation form input:focus {
+    outline: none;
+    border-color: #006400; /* Bottle green */
+    box-shadow: 0 0 5px rgba(0, 100, 0, 0.5);
+}
+
+.add-accreditation form button {
+    grid-column: span 2;
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-accreditation form button:hover {
+    background-color: #004d00; /* Darker green */
+}
+
+/* Opportunities List Section */
+.opportunity-list {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.opportunity-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.opportunity-list th, .opportunity-list td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.opportunity-list th {
+    background-color: #f4f4f9;
+    color: #2c3e50;
+}
+
+.opportunity-list button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.opportunity-list .btn-secondary {
+    background-color: #3498db;
+}
+
+.opportunity-list .btn-danger {
+    background-color: #e74c3c;
+}
+
+/* Add Opportunity Section */
+.add-opportunity {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.add-opportunity h2 {
+    margin-top: 0;
+}
+
+.add-opportunity form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-opportunity label {
+    font-weight: bold;
+}
+
+.add-opportunity input, .add-opportunity select, .add-opportunity button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.add-opportunity button {
+    background-color: #006400;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+/*Qualification Section*/
+
+/* Qualifications List Section */
+.qualifications-list {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.qualifications-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.qualifications-list th, .qualifications-list td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.qualifications-list th {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    font-weight: bold;
+}
+
+.qualifications-list td {
+    color: #333;
+}
+
+.qualifications-list button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.qualifications-list .btn-secondary {
+    background-color: #3498db; /* Blue */
+}
+
+.qualifications-list .btn-secondary:hover {
+    background-color: #217dbb; /* Darker blue */
+}
+
+.qualifications-list .btn-danger {
+    background-color: #e74c3c; /* Red */
+}
+
+.qualifications-list .btn-danger:hover {
+    background-color: #c0392b; /* Darker red */
+}
+
+/* Add Qualification Section */
+.add-qualification {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.add-qualification h2 {
+    margin-top: 0;
+    color: #006400; /* Bottle green */
+}
+
+.add-qualification form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-qualification label {
+    font-weight: bold;
+}
+
+.add-qualification input, .add-qualification select, .add-qualification button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.add-qualification button {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-qualification button:hover {
+    background-color: #004d00; /* Darker green */
+}
+
+/*Filter Section*/
+
+/* Filters Section */
+.filters {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.filters h2 {
+    margin-top: 0;
+    color: #006400; /* Bottle green */
+}
+
+.filters form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.filters select, .filters button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filters button {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+    background-color: #004d00; /* Darker green */
+}
+
+.accreditation-number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.qualifications {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}

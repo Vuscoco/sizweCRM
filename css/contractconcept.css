@@ -1,0 +1,421 @@
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin: 20px 0; /* Add spacing around the button */
+}
+
+.new-client-btn {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    border: none;
+    width: auto; /* Adjust width to fit content */
+    padding: 10px 30px; /* Add padding for better spacing */
+    border-radius: 5px;
+    font-size: 20px; /* Adjust font size */
+    cursor: pointer;
+    display: flex; /* Use flexbox for icon and text alignment */
+    align-items: center; /* Center icon and text vertically */
+    gap: 10px; /* Add space between icon and text */
+    transition: background-color 0.3s ease;
+}
+
+.new-client-btn i {
+    font-size: 18px; /* Adjust icon size */
+}
+
+.new-client-btn:hover {
+    background-color: #228B22; /* Lighter green on hover */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 4px;
+    margin-top: 5px;
+    transition: display 0.2s ease;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Add padding to create a larger hover area */
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #228B22;
+    color: white;
+}
+
+.dropdown-content a:hover i {
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .new-client-btn {
+    background-color: #228B22;
+}
+
+.dropdown-content i {
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.card p {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #228B22;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.filter-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.filter-input {
+    padding: 8px 35px 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.filter-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+}
+
+.filter-dropdown {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.filter-icon {
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.filter-dropdown:hover .filter-icon {
+    color: #228B22;
+}
+
+.filter-options {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 4px;
+    margin-top: 5px;
+    transition: display 0.2s ease;
+}
+
+/* Add padding to create a larger hover area */
+.filter-options::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+}
+
+.filter-dropdown:hover .filter-options {
+    display: block;
+}
+
+.filter-options a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.filter-options a:hover {
+    background-color: #228B22;
+    color: white;
+}
+
+.filter-options a i {
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.filter-options a:hover i {
+    color: white;
+}
+
+.contract-form {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contract-section {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contract-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #228B22;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contract-section h2 i {
+    color: #228B22;
+}
+
+.contract-section h3 {
+    color: #444;
+    margin: 20px 0 15px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #228B22;
+    box-shadow: 0 0 5px rgba(34, 139, 34, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+}
+
+.allowances-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.allowance-item {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.add-allowance-btn {
+    background: #228B22;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.add-allowance-btn:hover {
+    background: #1a6b1a;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.submit-btn,
+.cancel-btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn {
+    background: #228B22;
+    color: white;
+    border: none;
+}
+
+.submit-btn:hover {
+    background: #1a6b1a;
+}
+
+.cancel-btn {
+    background: #f5f5f5;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.cancel-btn:hover {
+    background: #e5e5e5;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.header-content h1 {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+
+.back-btn {
+    position: absolute;
+    left: 20px;
+    background: #228B22;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #1a6b1a;
+}
+
+.back-btn i {
+    font-size: 16px;
+}
+
+/* Adjust main content for full width without sidebar */
+.main-content {
+    margin-left: 0;
+    width: 100%;
+}

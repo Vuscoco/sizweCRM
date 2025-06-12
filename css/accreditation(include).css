@@ -1,0 +1,267 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    background-color: #f4f4f4;
+    color: #333;
+    overflow: hidden; /* Prevent scrolling if content overflows */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    height: 100%; /* Full height */
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease; /* Smooth transition for collapsing */
+}
+
+.sidebar.collapsed {
+    width: 80px; /* Collapsed width */
+}
+
+.sidebar-header {
+    padding: 14.2px;
+    text-align: center;
+    border-bottom: 0.5px solid #ffffff; /* Darker green for separation */
+    cursor: pointer; /* Make the logo clickable */
+}
+
+.sidebar-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin: 10px 0;
+}
+
+.sidebar-nav a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    background-color: #228B22; /* Lighter green for hover */
+}
+
+.sidebar-nav a.active {
+    background-color: #228B22; /* Lighter green for active state */
+    font-weight: bold;
+}
+
+.sidebar.collapsed .sidebar-nav a span {
+    display: none; /* Hide text when collapsed */
+}
+
+.sidebar.collapsed .sidebar-nav a {
+    justify-content: center; /* Center icons when collapsed */
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px; /* Adjust for sidebar width */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ensure full height of the viewport */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    background-color: #f4f4f4; /* Ensure background color is visible */
+    color: #333;
+    padding: 0%; /* Add padding for spacing */
+    transition: margin-left 0.3s ease; /* Smooth transition for collapsing */
+}
+
+.sidebar.collapsed ~ .main-content {
+    margin-left: 80px; /* Adjust for collapsed sidebar */
+}
+
+/* Header */
+.header {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    font-size: 28px; /* Adjust font size for better visibility */
+    font-weight: bold; /* Ensure the header text stands out */
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin: 20px 0; /* Add spacing around the button */
+}
+
+.new-client-btn {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    border: none;
+    width: auto; /* Adjust width to fit content */
+    padding: 10px 30px; /* Add padding for better spacing */
+    border-radius: 5px;
+    font-size: 20px; /* Adjust font size */
+    cursor: pointer;
+    display: flex; /* Use flexbox for icon and text alignment */
+    align-items: center; /* Center icon and text vertically */
+    gap: 10px; /* Add space between icon and text */
+    transition: background-color 0.3s ease;
+}
+
+.new-client-btn i {
+    font-size: 18px; /* Adjust icon size */
+}
+
+.new-client-btn:hover {
+    background-color: #228B22; /* Lighter green on hover */
+}
+
+.new-client-btn a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from the button */
+    display: inline-block; /* Ensure proper alignment */
+}
+
+/* Accreditation Overview Section */
+.accreditation-overview {
+    margin-bottom: 40px;
+    background-color: #fff; /* White background for the section */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.accreditation-overview h2 {
+    margin-bottom: 20px;
+    color: #006400; /* Bottle green */
+    text-align: center;
+}
+
+.accreditation-overview p {
+    margin-bottom: 20px;
+    color: #333; /* Dark text for readability */
+    text-align: center;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Add spacing between cards */
+    margin-top: 20px; /* Add margin above the cards */
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 18px; /* Adjust font size for card titles */
+    margin-bottom: 10px; /* Add spacing below the title */
+    color: #006400; /* Bottle green */
+}
+
+.card p {
+    font-size: 16px; /* Adjust font size for card content */
+    color: #555; /* Use a lighter color for card text */
+}
+
+/* Accreditation List Section */
+.accreditation-list {
+    margin-bottom: 40px;
+    background-color: #fff; /* White background for the section */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.accreditation-list h2 {
+    margin-bottom: 20px;
+    color: #006400; /* Bottle green */
+    text-align: center;
+}
+
+.accreditation-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.accreditation-list th,
+.accreditation-list td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.accreditation-list th {
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    font-weight: bold;
+}
+
+.accreditation-list tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray for alternating rows */
+}
+
+.accreditation-list tr:hover {
+    background-color: #f1f1f1; /* Slightly darker gray on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #006400; /* Bottle green */
+    color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+footer p {
+    font-size: 14px; /* Adjust font size for footer text */
+    margin: 0; /* Remove default margin */
+}

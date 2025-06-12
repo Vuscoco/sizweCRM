@@ -1,0 +1,53 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Button Group Styling */
+.button-group {
+    display: flex; /* Align buttons horizontally */
+    border: 2px solid #006400; /* Outer border for the group */
+    border-radius: 8px; /* Rounded corners for the group */
+    overflow: hidden; /* Ensure buttons stay within the border */
+}
+
+.button-group button {
+    flex: 1; /* Make all buttons equal width */
+    border: none; /* Remove individual button borders */
+    background-color: #006400; /* Bottle green background */
+    color: #fff; /* White text */
+    padding: 8px 16px; /* Compact padding */
+    font-size: 18px; /* Larger font size */
+    font-weight: bold; /* Thicker font */
+    cursor: pointer;
+    position: relative; /* Required for the box-shadow effect */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Default shadow for 3D effect */
+}
+
+.button-group button:not(:last-child)::after {
+    content: ""; /* Add a pseudo-element for the hollow divider */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px; /* Width of the hollow divider */
+    height: 100%;
+    background-color: #f4f4f4; /* Match the background color of the page */
+    z-index: 1; /* Ensure it appears above the button */
+}
+
+.button-group button:hover {
+    background-color: #fff; /* Invert background color */
+    color: #006400; /* Invert text color */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+}
+
+.button-group button:active {
+    background-color: #004d00; /* Darker green when clicked */
+    color: #fff; /* Keep text white when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow to simulate pressing */
+    transform: translateY(2px); /* Slight downward movement on click */
+}

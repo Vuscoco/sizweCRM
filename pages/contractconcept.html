@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Creation</title>
+    <script src="../js/scripts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contractconcept.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+<!-- Main content area -->
+<div class="main-content">
+    <header class="header">
+        <div class="header-content">
+            <button class="back-btn" onclick="window.location.href='clientmanagement.html'">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <h1>Create New Contract</h1>
+        </div>
+    </header>
+
+    <main class="contract-form">
+        <form id="employmentContract">
+            <!-- Parties Section -->
+            <section class="contract-section">
+                <h2><i class="fas fa-users"></i> Parties to the Contract</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="companyName">Company Legal Name</label>
+                        <input type="text" id="companyName" name="companyName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="companyReg">Company Registration Number</label>
+                        <input type="text" id="companyReg" name="companyReg" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="companyAddress">Registered Address</label>
+                        <textarea id="companyAddress" name="companyAddress" required></textarea>
+                    </div>
+                </div>
+
+                <h3>Employee Details</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="employeeName">Full Legal Name</label>
+                        <input type="text" id="employeeName" name="employeeName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeId">ID Number</label>
+                        <input type="text" id="employeeId" name="employeeId" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="employeeAddress">Physical Address</label>
+                        <textarea id="employeeAddress" name="employeeAddress" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="employeePhone">Contact Number</label>
+                        <input type="tel" id="employeePhone" name="employeePhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeEmail">Email Address</label>
+                        <input type="email" id="employeeEmail" name="employeeEmail" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Employment Details Section -->
+            <section class="contract-section">
+                <h2><i class="fas fa-calendar-alt"></i> Employment Details</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" name="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employmentType">Employment Type</label>
+                        <select id="employmentType" name="employmentType" required>
+                            <option value="permanent">Permanent</option>
+                            <option value="fixed-term">Fixed-Term</option>
+                            <option value="temporary">Temporary</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="endDateGroup" style="display: none;">
+                        <label for="endDate">End Date</label>
+                        <input type="date" id="endDate" name="endDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="probationPeriod">Probation Period (months)</label>
+                        <input type="number" id="probationPeriod" name="probationPeriod" min="0" max="12" value="3">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Position Details Section -->
+            <section class="contract-section">
+                <h2><i class="fas fa-briefcase"></i> Position Details</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="jobTitle">Job Title</label>
+                        <input type="text" id="jobTitle" name="jobTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <input type="text" id="department" name="department" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reportingTo">Reporting To</label>
+                        <input type="text" id="reportingTo" name="reportingTo" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="jobDescription">Job Description</label>
+                        <textarea id="jobDescription" name="jobDescription" rows="4" required></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Remuneration Section -->
+            <section class="contract-section">
+                <h2><i class="fas fa-money-bill-wave"></i> Remuneration</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="basicSalary">Basic Salary (R)</label>
+                        <input type="number" id="basicSalary" name="basicSalary" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payFrequency">Pay Frequency</label>
+                        <select id="payFrequency" name="payFrequency" required>
+                            <option value="monthly">Monthly</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="fortnightly">Fortnightly</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="allowances-section">
+                    <h3>Allowances</h3>
+                    <div id="allowancesList">
+                        <div class="allowance-item">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Type</label>
+                                    <select name="allowanceType[]">
+                                        <option value="travel">Travel</option>
+                                        <option value="housing">Housing</option>
+                                        <option value="medical">Medical Aid</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Amount (R)</label>
+                                    <input type="number" name="allowanceAmount[]" step="0.01">
+                                </div>
+                                <div class="form-group checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="allowanceTaxable[]">
+                                        Taxable
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="add-allowance-btn" onclick="addAllowance()">
+                        <i class="fas fa-plus"></i> Add Allowance
+                    </button>
+                </div>
+            </section>
+
+            <!-- Working Hours Section -->
+            <section class="contract-section">
+                <h2><i class="fas fa-clock"></i> Working Hours</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="hoursPerDay">Hours per Day</label>
+                        <input type="number" id="hoursPerDay" name="hoursPerDay" min="1" max="24" value="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="daysPerWeek">Days per Week</label>
+                        <input type="number" id="daysPerWeek" name="daysPerWeek" min="1" max="7" value="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="totalHours">Total Hours per Week</label>
+                        <input type="number" id="totalHours" name="totalHours" readonly>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leave Entitlements Section -->
+            <section class="contract-section">
+                <h2><i class="fas fa-calendar-check"></i> Leave Entitlements</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="annualLeave">Annual Leave (days)</label>
+                        <input type="number" id="annualLeave" name="annualLeave" value="15" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sickLeave">Sick Leave (days)</label>
+                        <input type="number" id="sickLeave" name="sickLeave" value="30" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="familyLeave">Family Responsibility Leave (days)</label>
+                        <input type="number" id="familyLeave" name="familyLeave" value="3" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notice Period Section -->
+            <section class="contract-section">
+                <h2><i class="fas fa-exclamation-circle"></i> Notice Period</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="employeeNotice">Employee Notice Period (weeks)</label>
+                        <input type="number" id="employeeNotice" name="employeeNotice" min="1" value="4" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employerNotice">Employer Notice Period (weeks)</label>
+                        <input type="number" id="employerNotice" name="employerNotice" min="1" value="4" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Submit Section -->
+            <section class="contract-section">
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-save"></i> Save Contract
+                    </button>
+                    <button type="button" class="cancel-btn" onclick="window.location.href='clientmanagement.html'">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                </div>
+            </section>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CRM. All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html> 

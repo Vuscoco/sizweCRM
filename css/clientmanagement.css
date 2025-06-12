@@ -1,0 +1,47 @@
+/* Accreditation Overview Section */
+.accreditation-overview {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.accreditation-overview .cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.accreditation-overview .card {
+    background: #006400;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.accreditation-overview .card:hover {
+    transform: translateY(-5px);
+}
+
+.accreditation-overview .card h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+    color: white;
+}
+
+.accreditation-overview .card p {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+}
+
+/* Rest of existing styles */ 

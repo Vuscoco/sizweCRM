@@ -1,0 +1,474 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+.main-content {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.form-container {
+    width: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.form-container.color-grid {
+    padding: 40px;
+}
+
+.color-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.color-card {
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    cursor: pointer;
+}
+
+.color-card h2,
+.color-card p {
+    color: inherit;
+}
+
+.color-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Default Theme */
+.default-theme .color-card.primary {
+    background-color: #006400;
+    color: #4CAF50;
+}
+
+.default-theme .color-card.secondary {
+    background-color: #228B22;
+    color: #FFFFFF;
+}
+
+.default-theme .color-card.accent {
+    background-color: #4CAF50;
+    color: #006400;
+}
+
+.default-theme .color-card.background {
+    background-color: #FFFFFF;
+    color: #228B22;
+}
+
+/* Inverted Theme */
+.inverted-theme .color-card.primary {
+    background-color: #ff00ff;
+    color: #00ffff;
+}
+
+.inverted-theme .color-card.secondary {
+    background-color: #00ffff;
+    color: #ff0000;
+}
+
+.inverted-theme .color-card.accent {
+    background-color: #ff0000;
+    color: #ff00ff;
+}
+
+.inverted-theme .color-card.background {
+    background-color: #000000;
+    color: #ff00ff;
+}
+
+/* Gradient Theme */
+.gradient-theme .color-card.primary {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    color: #ffffff;
+}
+
+.gradient-theme .color-card.secondary {
+    background: linear-gradient(135deg, #4ecdc4, #45b7af);
+    color: #ff6b6b;
+}
+
+.gradient-theme .color-card.accent {
+    background: linear-gradient(135deg, #ff6b6b, #ff5252);
+    color: #4ecdc4;
+}
+
+.gradient-theme .color-card.background {
+    background: linear-gradient(135deg, #ffffff, #f5f5f5);
+    color: #ff6b6b;
+}
+
+/* Dark Theme */
+.dark-theme .color-card.primary {
+    background-color: #4CAF50;
+    color: #d32f2f;
+}
+
+.dark-theme .color-card.secondary {
+    background-color: #45a049;
+    color: #ffffff;
+}
+
+.dark-theme .color-card.accent {
+    background-color: #d32f2f;
+    color: #4CAF50;
+}
+
+.dark-theme .color-card.background {
+    background-color: #404040;
+    color: #45a049;
+}
+
+/* Theme Headers */
+.theme-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.default-theme .theme-header {
+    color: #006400;
+}
+
+.inverted-theme .theme-header {
+    color: #ff00ff;
+}
+
+.gradient-theme .theme-header {
+    color: #ff6b6b;
+}
+
+.dark-theme .theme-header {
+    color: #4CAF50;
+}
+
+/* Form Container Layout */
+.form-container.color-grid {
+    padding: 40px;
+    display: none;
+}
+
+.form-container.color-grid.active {
+    display: block;
+}
+
+/* Color Cards Grid */
+.color-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    color: #006400;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Table Header Styles */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.table-header h2 {
+    margin: 0;
+    color: #006400;
+}
+
+/* Theme Dropdown Styles */
+.theme-dropdown {
+    position: relative;
+    z-index: 1000;
+}
+
+.theme-dropdown-btn {
+    background: #006400;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    width: 48px;
+    height: 48px;
+}
+
+.theme-dropdown-btn:hover {
+    background: #228B22;
+}
+
+.theme-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    min-width: 48px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.theme-dropdown:hover .theme-dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.theme-option {
+    padding: 12px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+}
+
+.theme-option:hover {
+    background: #f5f5f5;
+}
+
+.theme-option.active {
+    background: #e8f5e9;
+    color: #006400;
+}
+
+.theme-option.active::before {
+    content: '✓';
+    position: absolute;
+    color: #006400;
+    font-size: 12px;
+    top: 2px;
+    right: 2px;
+}
+
+/* Theme Styles */
+/* Inverted Colors Theme */
+.container.inverted-colors {
+    background: #000000;
+    color: #ffffff;
+}
+
+.container.inverted-colors h2 {
+    color: #ff00ff;
+}
+
+.container.inverted-colors .input-group input {
+    background: #000000;
+    border-color: #ff00ff;
+    color: #ffffff;
+}
+
+.container.inverted-colors .input-group input:focus {
+    border-color: #00ffff;
+}
+
+.container.inverted-colors .input-group i {
+    color: #ff00ff;
+}
+
+.container.inverted-colors .btn {
+    background: #ff00ff;
+    color: #000000;
+}
+
+.container.inverted-colors .btn:hover {
+    background: #00ffff;
+}
+
+.container.inverted-colors .color-card.primary {
+    background-color: #ff00ff;
+    color: #00ffff;
+}
+
+.container.inverted-colors .color-card.secondary {
+    background-color: #00ffff;
+    color: #ff00ff;
+}
+
+.container.inverted-colors .color-card.accent {
+    background-color: #ff0000;
+    color: #00ffff;
+}
+
+.container.inverted-colors .color-card.background {
+    background-color: #000000;
+    color: #ff00ff;
+    border-color: #ff00ff;
+}
+
+/* Gradient Theme */
+.container.gradient {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    color: #ffffff;
+}
+
+.container.gradient h2 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.container.gradient .input-group input {
+    background: rgba(255,255,255,0.9);
+    border-color: #ffffff;
+    color: #333333;
+}
+
+.container.gradient .input-group input:focus {
+    border-color: #4ecdc4;
+}
+
+.container.gradient .input-group i {
+    color: #4ecdc4;
+}
+
+.container.gradient .btn {
+    background: linear-gradient(135deg, #4ecdc4, #45b7af);
+    color: #ffffff;
+}
+
+.container.gradient .btn:hover {
+    background: linear-gradient(135deg, #45b7af, #3da89f);
+}
+
+.container.gradient .color-card.primary {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    color: #2c3e50;
+}
+
+.container.gradient .color-card.secondary {
+    background: linear-gradient(135deg, #4ecdc4, #45b7af);
+    color: #ff6b6b;
+}
+
+.container.gradient .color-card.accent {
+    background: linear-gradient(135deg, #ff6b6b, #ff5252);
+    color: #4ecdc4;
+}
+
+.container.gradient .color-card.background {
+    background: linear-gradient(135deg, #ffffff, #f5f5f5);
+    color: #ff6b6b;
+    border: none;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background: #1a1a1a;
+}
+
+body.dark-theme .container {
+    background: #2d2d2d;
+    color: #ffffff;
+}
+
+body.dark-theme h2 {
+    color: #4CAF50;
+}
+
+body.dark-theme .input-group input {
+    background: #404040;
+    border-color: #505050;
+    color: #ffffff;
+}
+
+body.dark-theme .input-group input:focus {
+    border-color: #4CAF50;
+}
+
+body.dark-theme .input-group i {
+    color: #808080;
+}
+
+body.dark-theme .btn {
+    background: #4CAF50;
+}
+
+body.dark-theme .btn:hover {
+    background: #45a049;
+}
+
+body.dark-theme .color-card.primary {
+    background-color: #4CAF50;
+    color: #d32f2f;
+}
+
+body.dark-theme .color-card.secondary {
+    background-color: #45a049;
+    color: #4CAF50;
+}
+
+body.dark-theme .color-card.accent {
+    background-color: #d32f2f;
+    color: #4CAF50;
+}
+
+body.dark-theme .color-card.background {
+    background-color: #404040;
+    color: #45a049;
+    border-color: #505050;
+}
+
+/* Spacing between containers */
+.container + .container {
+    margin-top: 30px;
+} 
